@@ -132,11 +132,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        /* Enhanced body with better performance and accessibility */
+          /* Enhanced body with better performance and accessibility */
         body {
             font-family: var(--font-primary);
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 50%, var(--secondary-color) 100%);
+            background: var(--secondary-color);
             color: var(--white);
             line-height: 1.7;
             overflow-x: hidden;
@@ -176,42 +175,13 @@
                 --gray-900: #000000;
             }
         }
-        
-        /* Dark mode support for devices that prefer it */
+          /* Dark mode support for devices that prefer it */
         @media (prefers-color-scheme: dark) {
             :root {
-                --gray-50: #1e293b;
-                --gray-100: #334155;
-                --white: #f8fafc;
+                --gray-50: #f8fafc;
+                --gray-100: #f1f5f9;
+                --white: #ffffff;
             }
-        }
-
-        /* Animated background particles */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 50%, var(--secondary-color) 100%);
-        }
-
-        .particle {
-            position: absolute;
-            background: radial-gradient(circle, rgba(196, 30, 58, 0.1), rgba(196, 30, 58, 0.05));
-            border-radius: 50%;
-            animation: float 25s infinite linear;
-            backdrop-filter: blur(1px);
-            box-shadow: 0 0 10px rgba(196, 30, 58, 0.2);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-100vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
         
         .container {
@@ -220,14 +190,13 @@
             padding: 0;
             position: relative;
         }
-        
-        /* Enhanced slide styling with better typography */
+          /* Enhanced slide styling with better typography */
         .slide {
             min-height: 100vh;
             width: 100vw;
             padding: var(--space-16) var(--space-20) var(--space-24) var(--space-20);
             margin: 0;
-            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            background: var(--white);
             color: var(--gray-800);
             box-shadow: var(--shadow-2xl);
             position: relative;
@@ -242,33 +211,24 @@
             line-height: 1.75;
             letter-spacing: -0.005em;
         }
-        
-        .slide::before {
+          .slide::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 6px;
-            background: linear-gradient(90deg, var(--primary-color), var(--primary-light), var(--accent-color));
-            background-size: 200% 100%;
-            animation: gradient-flow 4s ease infinite;
+            background: var(--primary-color);
         }
         
-        @keyframes gradient-flow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        /* Slide number indicator - more professional */
-        .slide::after {
+        /* Slide number indicator - more professional */        .slide::after {
             content: '';
             position: absolute;
             bottom: var(--space-8);
             right: var(--space-10);
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: var(--primary-color);
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
@@ -294,45 +254,6 @@
             box-shadow: var(--shadow-2xl);
         }
 
-        /* Modern slide navigation */
-        .slide-nav {
-            position: fixed;
-            right: var(--space-8);
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-3);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            padding: var(--space-4);
-            border-radius: var(--radius-2xl);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .slide-nav-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: var(--radius-full);
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-        }
-
-        .slide-nav-dot.active {
-            background: var(--primary-color);
-            transform: scale(1.3);
-            border-color: var(--white);
-            box-shadow: var(--shadow-md);
-        }
-
-        .slide-nav-dot:hover {
-            background: var(--primary-light);
-            transform: scale(1.1);
-        }
-
         /* Progress bar enhancement */
         .presentation-progress {
             position: fixed;
@@ -343,46 +264,30 @@
             background: rgba(0, 0, 0, 0.1);
             z-index: 1000;
             backdrop-filter: blur(8px);
-        }
-
-        .progress-bar {
+        }        .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--primary-light), var(--accent-color));
+            background: var(--primary-color);
             width: 0%;
             transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(196, 30, 58, 0.4);
-        }        /* Enhanced Professional Typography */
+        }/* Clean Professional Typography */
         .slide h1 {
             color: var(--primary-color);
-            font-size: clamp(var(--text-4xl), 4vw, var(--text-6xl));
-            font-weight: 800;
-            margin-bottom: var(--space-10);
+            font-size: clamp(2.25rem, 4vw, 3.75rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
             text-align: center;
-            position: relative;
-            padding-bottom: var(--space-6);
             font-family: var(--font-primary);
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            background-clip: text;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradient-flow 3s ease infinite;
+            line-height: 1.2;
         }
         
         .slide h1::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
+            display: block;
+            width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: var(--radius-full);
+            background: var(--primary-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
 
         .slide h2 {
@@ -438,10 +343,8 @@
             text-align: center;
             margin-bottom: var(--space-16);
             position: relative;
-        }
-
-        .company-logo {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }        .company-logo {
+            background: var(--primary-color);
             color: var(--white);
             padding: var(--space-8) var(--space-12);
             border-radius: var(--radius-2xl);
@@ -464,7 +367,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: rgba(255,255,255,0.3);
             animation: shine 4s infinite;
         }
 
@@ -474,7 +377,7 @@
         }        .company-logo:hover {
             transform: translateY(-4px) scale(1.02);
             box-shadow: var(--shadow-2xl);
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            background: var(--primary-light);
         }
 
         /* Company Logo Image Styles */
@@ -507,8 +410,7 @@
                 opacity: 1; 
                 transform: scale(1) translateY(0); 
             }
-        }/* Professional Icon System */
-        .professional-icon {
+        }/* Professional Icon System */        .professional-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -518,7 +420,7 @@
             margin-right: var(--space-4);
             font-size: var(--text-xl);
             color: var(--white);
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: var(--primary-color);
             box-shadow: var(--shadow-md);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid rgba(255, 255, 255, 0.1);
@@ -526,23 +428,23 @@
         }
 
         .professional-icon.success {
-            background: linear-gradient(135deg, var(--success-color), #1e8449);
+            background: var(--success-color);
         }
 
         .professional-icon.info {
-            background: linear-gradient(135deg, var(--accent-color), #2980b9);
+            background: var(--accent-color);
         }
 
         .professional-icon.warning {
-            background: linear-gradient(135deg, var(--warning-color), #d68910);
+            background: var(--warning-color);
         }
 
         .professional-icon.secondary {
-            background: linear-gradient(135deg, var(--gray-600), var(--gray-700));
+            background: var(--gray-600);
         }
 
         .professional-icon.search {
-            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+            background: #9c27b0;
         }
         
         .professional-icon:hover {
@@ -613,13 +515,11 @@
             background: var(--white);
             border-color: var(--primary-color);
             transform: translateX(4px);
-        }
-
-        .finding-item {
+        }        .finding-item {
             display: flex;
             align-items: center;
             padding: var(--space-4);
-            background: linear-gradient(135deg, #f0fff4, #e6fffa);
+            background: #f0fff4;
             border-radius: var(--radius-lg);
             border: 1px solid var(--success-color);
             transition: all 0.3s ease;
@@ -640,16 +540,13 @@
             color: var(--success-color);
         }        /* Enhanced Card Components */
         .building-layout {
-            background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+            background: var(--gray-50);
             padding: var(--space-12);
             border-radius: var(--radius-2xl);
             margin: var(--space-8) 0;
             text-align: center;
             border: 2px solid var(--gray-200);
             box-shadow: var(--shadow-lg);
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(196, 30, 58, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
         }
 
         .building-title {
@@ -657,10 +554,8 @@
             color: var(--primary-color);
             font-weight: 700;
             font-size: var(--text-2xl);
-        }
-
-        .floor-card {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }        .floor-card {
+            background: var(--primary-color);
             color: var(--white);
             padding: var(--space-8);
             border-radius: var(--radius-xl);
@@ -734,15 +629,13 @@
         .architecture-box:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
-        }
-
-        .architecture-box.cloud {
-            background: linear-gradient(135deg, var(--accent-color), #2980b9);
+        }        .architecture-box.cloud {
+            background: var(--accent-color);
             color: var(--white);
         }
 
         .architecture-box.network {
-            background: linear-gradient(135deg, var(--warning-color), #d68910);
+            background: var(--warning-color);
             color: var(--white);
         }
 
@@ -862,14 +755,12 @@
 
         .list-margin {
             margin-top: var(--space-6);
-        }
-
-        /* Enhanced Badge System */
+        }        /* Enhanced Badge System */
         .metric-badge {
             display: inline-flex;
             align-items: center;
             padding: var(--space-3) var(--space-5);
-            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            background: var(--gray-100);
             border-radius: var(--radius-full);
             font-weight: 600;
             color: var(--gray-800);
@@ -887,21 +778,21 @@
         }
 
         .metric-badge.primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: var(--primary-color);
             color: var(--white);
         }
 
         .metric-badge.success {
-            background: linear-gradient(135deg, var(--success-color), #1e8449);
+            background: var(--success-color);
             color: var(--white);
         }
 
         .metric-badge.info {
-            background: linear-gradient(135deg, var(--accent-color), #2980b9);
+            background: var(--accent-color);
             color: var(--white);
         }        /* Enhanced Problem and Solution Boxes */
         .problem-box {
-            background: linear-gradient(135deg, #fef7f7, #fef2f2);
+            background: #fef7f7;
             border-left: 6px solid var(--primary-color);
             padding: var(--space-8);
             margin: var(--space-8) 0;
@@ -919,7 +810,7 @@
         }
 
         .solution-box {
-            background: linear-gradient(135deg, #f0fff4, #ecfdf5);
+            background: #f0fff4;
             border-left: 6px solid var(--success-color);
             padding: var(--space-8);
             margin: var(--space-8) 0;
@@ -936,7 +827,7 @@
             border-color: rgba(39, 174, 96, 0.2);
         }        /* Enhanced Technical Specifications */
         .technical-specs {
-            background: linear-gradient(135deg, var(--gray-50), var(--white));
+            background: var(--gray-50);
             padding: var(--space-10);
             border-radius: var(--radius-2xl);
             margin: var(--space-8) 0;
@@ -953,7 +844,7 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--warning-color));
+            background: var(--primary-color);
         }
 
         .spec-grid {
@@ -1015,7 +906,7 @@
             border-bottom: none;
         }        /* Enhanced Contact and UI Components */
         .contact-info {
-            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            background: var(--secondary-color);
             color: var(--white);
             padding: var(--space-10);
             border-radius: var(--radius-2xl);
@@ -1033,32 +924,8 @@
         .contact-info p {
             margin-bottom: var(--space-3);
             line-height: 1.6;
-        }
-
-        /* Enhanced Navigation Controls */
-        .toc-button {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--white);
-            border: none;
-            padding: var(--space-4) var(--space-6);
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            font-weight: 700;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(12px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            font-family: var(--font-primary);
-        }
-
-        .toc-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: var(--shadow-xl);
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
-        }
-
-        .slide-counter {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }        .slide-counter {
+            background: var(--primary-color);
             color: var(--white);
             padding: var(--space-3) var(--space-6);
             border-radius: var(--radius-full);
@@ -1079,54 +946,11 @@
             background: rgba(0, 0, 0, 0.15);
             z-index: 1000;
             backdrop-filter: blur(8px);
-        }
-
-        .progress-bar-bottom {
+        }        .progress-bar-bottom {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--primary-light), var(--accent-color));
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(196, 30, 58, 0.5);
-        }
-
-        /* Enhanced Thumbnail Navigation */
-        .thumbnail-nav {
-            position: fixed;
-            bottom: var(--space-8);
-            right: var(--space-8);
-            z-index: 1001;
-            display: flex;
-            gap: var(--space-2);
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(16px);
-            padding: var(--space-4);
-            border-radius: var(--radius-2xl);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .thumbnail-dot {
-            width: 14px;
-            height: 10px;
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-        }
-
-        .thumbnail-dot.active {
             background: var(--primary-color);
-            height: 14px;
-            border-color: var(--white);
-            box-shadow: var(--shadow-md);
-        }
-
-        .thumbnail-dot:not(.active) {
-            background: rgba(196, 30, 58, 0.4);
-        }
-
-        .thumbnail-dot:hover {
-            background: var(--primary-light);
-            transform: scale(1.1);
-        }        /* Enhanced Table and Timeline Components */
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }/* Enhanced Table and Timeline Components */
         .site-survey {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1140,10 +964,8 @@
             border-radius: var(--radius-xl);
             border: 2px solid var(--primary-color);
             box-shadow: var(--shadow-md);
-        }
-
-        .ap-placement {
-            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+        }        .ap-placement {
+            background: #fff8e1;
             padding: var(--space-6);
             margin: var(--space-4) 0;
             border-radius: var(--radius-lg);
@@ -1165,10 +987,8 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             border: 2px solid var(--gray-200);
-        }
-
-        .pricing-table th {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }        .pricing-table th {
+            background: var(--primary-color);
             color: var(--white);
             padding: var(--space-6);
             text-align: left;
@@ -1191,10 +1011,8 @@
         
         .pricing-table tr:hover {
             background: var(--gray-100);
-        }
-
-        .total-row {
-            background: linear-gradient(135deg, #fef7f7, #fef2f2) !important;
+        }        .total-row {
+            background: #fef7f7 !important;
             font-weight: 700;
             color: var(--primary-color) !important;
             font-size: var(--text-base);
@@ -1234,12 +1052,10 @@
             display: flex;
             align-items: flex-start;
             gap: var(--space-6);
-        }
-
-        .timeline-marker {
+        }        .timeline-marker {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: var(--primary-color);
             border-radius: var(--radius-full);
             color: var(--white);
             display: flex;
@@ -1263,15 +1079,14 @@
             position: relative;
             overflow: hidden;
         }
-        
-        .timeline-content::before {
+          .timeline-content::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            background: rgba(196, 30, 58, 0.1);
             transition: left 0.6s;
         }
 
@@ -1321,8 +1136,7 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-6);
             }
-            
-            .thumbnail-nav {
+              .thumbnail-nav {
                 bottom: var(--space-4);
                 right: var(--space-4);
                 padding: var(--space-3);
@@ -1333,13 +1147,6 @@
                 top: var(--space-4);
                 right: var(--space-4);
                 padding: var(--space-2) var(--space-4);
-                font-size: var(--text-sm);
-            }
-            
-            .toc-button {
-                bottom: var(--space-4);
-                left: var(--space-4);
-                padding: var(--space-3) var(--space-4);
                 font-size: var(--text-sm);
             }
             
@@ -1429,11 +1236,9 @@
                 margin: 0 !important;
                 padding: 0 !important;
                 height: auto !important;
-            }
-            
-            /* COMPLETELY HIDE ALL NAVIGATION */
-            .thumbnail-nav, .slide-counter, .toc-button, .progress-container,
-            .presentation-progress, .slide-nav, .bg-animation, .particle,
+            }              /* COMPLETELY HIDE REMAINING ELEMENTS */
+            .slide-counter, .progress-container,
+            .presentation-progress, .bg-animation, .particle,
             .container, .slide::after, .slide::before {
                 display: none !important;
                 visibility: hidden !important;
@@ -1813,13 +1618,8 @@
                 page-break-before: always !important;
                 break-before: always !important;
             }
-        }
-
-        /*Safari Compatibility Fixes */
-        .slide-nav,
+        }        /*Safari Compatibility Fixes */
         .presentation-progress,
-        .thumbnail-nav,
-        .toc-button,
         .progress-container {
             -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
@@ -1870,11 +1670,7 @@
         <div class="presentation-progress">
             <div class="progress-bar" id="progressBar"></div>
         </div>
-        
-        <!-- Slide Navigation Dots -->
-        <div class="slide-nav" id="slideNav">
-            <!-- Navigation dots will be generated by JavaScript -->
-        </div>        <!-- Slide 1: Title Slide -->
+  <!-- Slide 1: Title Slide -->
         <div class="slide">            <div class="logo-header">
                 <div class="company-logo-container">
                     <img src="./ARARAT%20Logo%20(3)%20(3).png" alt="Ararat Technologies" class="company-logo-img" />
@@ -2083,25 +1879,23 @@
             <h2><span class="professional-icon warning"><i class="fas fa-map-marker-alt"></i></span>Access Point Placement Strategy</h2>
             
             <!-- 3D Building Visualization -->
-            <div style="background: linear-gradient(135deg, #f5f5f5, #e0e0e0); padding: 30px; border-radius: 15px; margin: 20px 0; text-align: center;">
-                <h3 style="margin-bottom: 20px; color: var(--primary-color);">AMET University Building - 4 Floor Coverage</h3>                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
-                      <!-- 3rd Floor -->
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 15px; margin: 20px 0; text-align: center;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">AMET University Building - 4 Floor Coverage</h3>                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">                  <!-- 3rd Floor -->
+                    <div style="background: var(--primary-color); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
                         <div style="font-size: 2em; margin-bottom: 10px;"><i class="fas fa-book-open"></i></div>
                         <h4>3rd Floor</h4>
                         <div style="font-size: 1.5em; margin: 10px 0;"><i class="fas fa-wifi"></i> × 5</div>
                         <div style="font-size: 0.9em;">Library & Study Areas</div>
                     </div>
                       <!-- 2nd Floor -->
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+                    <div style="background: var(--primary-color); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
                         <div style="font-size: 2em; margin-bottom: 10px;"><i class="fas fa-building"></i></div>
                         <h4>2nd Floor</h4>
                         <div style="font-size: 1.5em; margin: 10px 0;"><i class="fas fa-wifi"></i> × 5</div>
                         <div style="font-size: 0.9em;">Admin Offices</div>
                     </div>
-                    
-                    <!-- 1st Floor -->
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+                      <!-- 1st Floor -->
+                    <div style="background: var(--primary-color); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
                         <div style="font-size: 2em; margin-bottom: 10px;"><i class="fas fa-graduation-cap"></i></div>
                         <h4>1st Floor</h4>
                         <div style="font-size: 1.5em; margin: 10px 0;"><i class="fas fa-wifi"></i> × 5</div>
@@ -2109,7 +1903,7 @@
                     </div>
                     
                     <!-- Ground Floor -->
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+                    <div style="background: var(--primary-color); color: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
                         <div style="font-size: 2em; margin-bottom: 10px;"><i class="fas fa-door-open"></i></div>
                         <h4>Ground Floor</h4>
                         <div style="font-size: 1.5em; margin: 10px 0;"><i class="fas fa-wifi"></i> × 5</div>
@@ -2207,7 +2001,7 @@
         <div class="slide">
             <h1>Technical Solution</h1>
               <!-- Product Showcase -->
-            <div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 15px; margin: 20px 0; text-align: center;">
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin: 20px 0; text-align: center;">
                 <div class="section-header" style="justify-content: center;">
                     <div class="professional-icon info">
                         <i class="fas fa-wifi"></i>
@@ -2271,14 +2065,14 @@
 
             <!-- Network Architecture Visualization -->
             <h2><span class="professional-icon success"><i class="fas fa-sitemap"></i></span>Network Architecture</h2>
-            <div style="background: linear-gradient(135deg, #f9f9f9, #ffffff); padding: 25px; border-radius: 15px; border: 2px solid #e0e0e0;">
+            <div style="background: #f9f9f9; padding: 25px; border-radius: 15px; border: 2px solid #e0e0e0;">
                 
                 <!-- Architecture Diagram -->
                 <div style="text-align: center; margin-bottom: 30px;">
                     <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-sitemap" style="margin-right: 10px;"></i>Deployment Architecture Overview</h3>
                     
                     <!-- Cloud Management -->
-                    <div style="background: linear-gradient(135deg, #2196f3, #1976d2); color: white; padding: 15px; border-radius: 10px; margin: 0 auto 20px; max-width: 300px;">
+                    <div style="background: #2196f3; color: white; padding: 15px; border-radius: 10px; margin: 0 auto 20px; max-width: 300px;">
                         <div style="font-size: 2em; margin-bottom: 5px;"><i class="fas fa-cloud"></i></div>
                         <strong>Ruijie Cloud Management</strong>
                         <div style="font-size: 0.9em; opacity: 0.9;">Centralized Control & Monitoring</div>
@@ -2286,7 +2080,7 @@
                       <!-- Connectivity Arrow -->
                     <div style="font-size: 2em; color: #666; margin: 10px 0;"><i class="fas fa-arrow-down"></i></div>
                       <!-- Network Infrastructure -->
-                    <div style="background: linear-gradient(135deg, #ff9800, #f57c00); color: white; padding: 15px; border-radius: 10px; margin: 0 auto 20px; max-width: 300px;">
+                    <div style="background: #ff9800; color: white; padding: 15px; border-radius: 10px; margin: 0 auto 20px; max-width: 300px;">
                         <div style="font-size: 2em; margin-bottom: 5px;"><i class="fas fa-network-wired"></i></div>
                         <strong>Network Infrastructure</strong>
                         <div style="font-size: 0.9em; opacity: 0.9;">PoE Switches & Gigabit Uplinks</div>
@@ -2594,58 +2388,13 @@
         </div>
     </div>    <!-- Progress Bar -->
     <div class="progress-container">
-        <div id="progress-bar" class="progress-bar-bottom" style="width: 11.11%;"></div>
-    </div>    <!-- Table of Contents Toggle -->
-    <div style="position: fixed; bottom: var(--space-8); left: var(--space-8); z-index: 1001;">
-        <button id="toc-toggle" class="toc-button">
-            <i class="fas fa-list" style="margin-right: var(--space-2);"></i>Table of Contents
-        </button>
-    </div>    <!-- Table of Contents Overlay -->
-    <div id="toc-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1002; display: none; padding: var(--space-16); backdrop-filter: blur(12px);">
-        <div style="max-width: 900px; margin: 0 auto; background: var(--white); padding: var(--space-16); border-radius: var(--radius-2xl); max-height: 85vh; overflow-y: auto; box-shadow: var(--shadow-2xl); border: 2px solid var(--gray-200);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-12); border-bottom: 3px solid var(--primary-color); padding-bottom: var(--space-6);">
-                <h2 style="margin: 0; color: var(--primary-color); font-family: var(--font-primary); font-weight: 800; font-size: var(--text-3xl);">Table of Contents</h2>
-                <button id="toc-close" style="background: var(--primary-color); color: var(--white); border: none; padding: var(--space-3) var(--space-5); border-radius: var(--radius-lg); cursor: pointer; font-weight: 700; transition: all 0.3s ease; box-shadow: var(--shadow-md);">
-                    <i class="fas fa-times" style="margin-right: var(--space-2);"></i>Close
-                </button>
-            </div>
-            <div id="toc-content" style="line-height: 1.8; display: grid; gap: var(--space-3);">
-                <div onclick="scrollToSlide(0)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>1. Title Slide</strong> - AMET University Campus WiFi Proposal</div>
-                <div onclick="scrollToSlide(1)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>2. Executive Summary</strong> - Current Challenge & Our Solution</div>
-                <div onclick="scrollToSlide(2)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>3. Problem Statement & Requirements</strong> - Technical & Coverage Requirements</div>
-                <div onclick="scrollToSlide(3)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>4. Site Survey & Technical Analysis</strong> - Assessment & AP Placement</div>
-                <div onclick="scrollToSlide(4)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>5. Technical Solution</strong> - Ruijie RG-AP820-L(V3) Specifications</div>
-                <div onclick="scrollToSlide(5)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>6. Financial Proposal</strong> - Detailed Pricing Breakdown (₹3,24,000)</div>
-                <div onclick="scrollToSlide(6)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>7. Implementation Timeline</strong> - 5-Week Project Schedule</div>
-                <div onclick="scrollToSlide(7)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>8. Why Choose Ararat Technologies</strong> - Expertise & Partnership Benefits</div>
-                <div onclick="scrollToSlide(8)" style="padding: var(--space-4); cursor: pointer; border-left: 4px solid var(--primary-color); margin: 0; background: var(--gray-50); border-radius: var(--radius-lg); transition: all 0.3s ease; border: 2px solid var(--gray-200);"><strong>9. Next Steps & Contact Information</strong> - Contact Details & Next Actions</div>
-            </div>
-        </div>
-    </div>
+        <div id="progress-bar" class="progress-bar-bottom" style="width: 11.11%;"></div>    </div>
 
     <script>
         let currentSlideIndex = 0;
-        const totalSlides = 9;
-
-        // Add smooth scrolling and presentation navigation
+        const totalSlides = 9;        // Add smooth scrolling and presentation navigation
         document.addEventListener('DOMContentLoaded', function() {
             updateSlideCounter();
-            
-            // Table of Contents functionality
-            document.getElementById('toc-toggle').addEventListener('click', function() {
-                document.getElementById('toc-overlay').style.display = 'block';
-            });
-            
-            document.getElementById('toc-close').addEventListener('click', function() {
-                document.getElementById('toc-overlay').style.display = 'none';
-            });
-            
-            // Close TOC when clicking outside content
-            document.getElementById('toc-overlay').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.style.display = 'none';
-                }
-            });
             
             // Scroll tracking
             let ticking = false;
@@ -2693,19 +2442,16 @@
                     block: 'start'
                 });
             }
-        }
-
-        function scrollToSlide(slideIndex) {
+        }        function scrollToSlide(slideIndex) {
             const slides = document.querySelectorAll('.slide');
             currentSlideIndex = slideIndex;
-            document.getElementById('toc-overlay').style.display = 'none';
             const targetSlide = slides[slideIndex];
             targetSlide.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
             updateSlideCounter();
-        }        function updateSlideCounter() {
+        }function updateSlideCounter() {
             const slides = document.querySelectorAll('.slide');
             const scrolled = window.scrollY;
             const windowHeight = window.innerHeight;
